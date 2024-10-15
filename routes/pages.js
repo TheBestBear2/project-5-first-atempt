@@ -1,7 +1,8 @@
 
 const express = require('express')
 const loggedIn = require('../controllers/loggedIn')
-const { status } = require('init')
+const logout = require('../controllers/logout')
+//const { status } = require('init')
 const router = express.Router()
 
 router.get('/', loggedIn, (req, res) => {
@@ -20,5 +21,11 @@ router.get('/register', (req, res) => {
 router.get('/login', (req, res) => {
     res.sendFile('login.html', {root: './public/'})
 })
+
+router.get('/profile', (req, res) => {
+    res.sendFile('profile.html', {root: './public/'})
+})
+
+router.get('/logout', logout)
 
 module.exports = router
