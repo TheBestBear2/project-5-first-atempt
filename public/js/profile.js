@@ -1,11 +1,11 @@
 document.addEventListener('submit', () => {
-    const login = {
+    const profile = {
         email: email.value,
         password: password.value
     }
-    fetch('/api/login', {
+    fetch('/api/profile', {
         method: 'POST',
-        body: JSON.stringify(login),
+        body: JSON.stringify(profile),
         headers: {
             'Content-type': 'application/json'
         }

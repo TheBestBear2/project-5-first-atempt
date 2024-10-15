@@ -3,6 +3,7 @@ document.addEventListener("submit", () => {
         email: email.value,
         password: password.value
     }
+   // console.log(register);
     fetch("/api/register", {
         method: "POST",
         body: JSON.stringify(register),
@@ -11,6 +12,7 @@ document.addEventListener("submit", () => {
         }
     }).then(res => res.json())
         .then(data => {
+            console.log(data)
             if (data.status == "error"){
                 success.style.display = "none"
                 error.style.display = "block"
